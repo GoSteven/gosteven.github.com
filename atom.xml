@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Stevens Blog]]></title>
+  <title><![CDATA[Steven You]]></title>
   <link href="http://GoSteven.com/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
-  <updated>2011-12-29T16:13:15+11:00</updated>
+  <updated>2011-12-29T16:26:24+11:00</updated>
   <id>http://GoSteven.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
