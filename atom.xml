@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Steven You]]></title>
+  <link href="http://GoSteven.com/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2011-12-29T16:26:24+11:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
+    <link href="http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <updated>2011-12-29T00:11:00+11:00</updated>
+    <id>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
+]]></content>
+  </entry>
+  
+</feed>
