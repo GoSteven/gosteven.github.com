@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Steven You"
+#date: 2011-12-29 14:24
+comments: true
+sharing: true
+footer: true
+---
+<h3>About</h3> 
+<p>Howdy, I am Steven(Silin) You. A software engineer living in Sydney.</p>
+<h3>I Like</h3> 
+<p>VI Python Git Mac Shell ObjectiveC UNSW C# Guitar Hiking</p>
+<h3>I Don't Like</h3> 
+<p>Reinstall</p> 
+<h3>My Links</h3> 
+<ul>
+ <li>Dev Blog: <a href="http://dev.gosteven.com">dev.gosteven.com</a> </li>
+ <li>github: <a href="https://github.com/gosteven">github.com/gosteven</a> </li>
+ <li>Twitter: <a href="http://twitter.com/steven_you">@steven_you</a></li> 
+ <li>About Me: <a href="http://about.me/yousilin">about.me/yousilin</a></li> 	  
+ <li>Google+: <a href="http://profiles.google.com/yousilin">profiles.google.com/yousilin</a> </li>
+ <li>facebook: <a href="http://www.facebook.com/silinyou">facebook.com/silinyou</a></li> 
+ <li>Tumblr tumblog: <a href="http://t.gosteven.com">t.gosteven.com</a> </li> 
+ <li>In CSE UNSW: <a href="http://www.cse.unsw.edu.au/~syou679/">SYOU</a></li> 
+ <li>Email me: steven [at] the naked domain as this webpage</li> 
+</ul> 
