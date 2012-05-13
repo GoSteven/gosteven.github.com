@@ -12,19 +12,23 @@ I have a repo on Github, [Tumblr Image Downloader](https://github.com/GoSteven/t
 
 Basically, there is a *task queue*:
 
+{% codeblock lang:python %}
     q = Queue()
+{% endcodeblock %}
  
 and a *worker*:
 
+{% codeblock lang:python %}
     def worker():
         while True:
             download_img(q.get(), save_path)
             q.task_done()
+{% endcodeblock %}
 
 What the *download_img* function does is get the image url and save it to the *save_path*. 
             
 The program will call the *download_imgs* function:
-    
+{% codeblock lang:python %}
     def download_imgs(imgs_src, save_path, num_workers):
         for i in range(num_workers):
             t = Thread(target=worker)
@@ -35,6 +39,7 @@ The program will call the *download_imgs* function:
         q.join()
         
     download_imgs(imgs_src, save_path, numthreads)
+{% endcodeblock %}
     
 ###Better and Simpler way: Using concurrent.futures module
 [PEP 3148](http://www.python.org/dev/peps/pep-3148/) gives the motivation for this module:
@@ -44,28 +49,30 @@ This module will make the life easier. Download link is [here](http://pypi.pytho
 
 I will take ThreadPoolExecutor for example:
 
-    import concurrent.futures
-    import urllib.request
+{% codeblock lang:python %}
+import concurrent.futures
+import urllib.request
 
-    URLS = ['http://www.foxnews.com/',
-            'http://www.cnn.com/',
-            'http://europe.wsj.com/',
-            'http://www.bbc.co.uk/',
-            'http://some-made-up-domain.com/']
+URLS = ['http://www.foxnews.com/',
+        'http://www.cnn.com/',
+        'http://europe.wsj.com/',
+        'http://www.bbc.co.uk/',
+        'http://some-made-up-domain.com/']
 
-    def load_url(url, timeout):
-        return urllib.request.urlopen(url, timeout=timeout).read()
+def load_url(url, timeout):
+    return urllib.request.urlopen(url, timeout=timeout).read()
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_url = dict((executor.submit(load_url, url, 60), url)
-                             for url in URLS)
+with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    future_to_url = dict((executor.submit(load_url, url, 60), url)
+                         for url in URLS)
 
-        for future in concurrent.futures.as_completed(future_to_url):
-            url = future_to_url[future]
-            if future.exception() is not None:
-                print('%r generated an exception: %s' % (url,
-                                                         future.exception()))
-            else:
-                print('%r page is %d bytes' % (url, len(future.result())))
+    for future in concurrent.futures.as_completed(future_to_url):
+        url = future_to_url[future]
+        if future.exception() is not None:
+            print('%r generated an exception: %s' % (url,
+                                                     future.exception()))
+        else:
+            print('%r page is %d bytes' % (url, len(future.result())))
+{% endcodeblock %}
         
 -EOF-
