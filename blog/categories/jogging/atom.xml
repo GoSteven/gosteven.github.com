@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jogging | Steven You]]></title>
+  <link href="http://GoSteven.github.com/blog/categories/jogging/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2012-06-07T22:24:42+10:00</updated>
+  <id>http://GoSteven.github.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Play around with Django]]></title>
+    <link href="http://GoSteven.github.com/blog/2012/03/18/play-around-with-django/"/>
+    <updated>2012-03-18T22:24:00+11:00</updated>
+    <id>http://GoSteven.github.com/blog/2012/03/18/play-around-with-django</id>
+    <content type="html"><![CDATA[<p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
+
+<p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
+
+<p>Django-nonreal contain all the major functionalities of Django which can host pure Django application on google application. It just works awesome!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
+    <link href="http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <updated>2011-12-29T00:11:00+11:00</updated>
+    <id>http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
+
+<p>I am not going to migrate my old blog post here, as those are mostly code snippets. Visit <a href="http://dev.gosteven.com">Steven's Dev Blog</a> in case you are interested.</p>
+]]></content>
+  </entry>
+  
+</feed>
