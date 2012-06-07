@@ -4,6 +4,7 @@ title: "Play around with Django"
 date: 2012-03-18 22:24
 comments: true
 categories: Jogging
+keywords: "python, Django, Diary"
 ---
 
 Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication. 

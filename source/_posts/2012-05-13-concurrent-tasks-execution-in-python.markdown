@@ -3,7 +3,8 @@ layout: post
 title: "Concurrent tasks execution in Python"
 date: 2012-05-13 13:37
 comments: true
-categories: 
+categories: python
+keywords: "concurrent, python, concurrent tasks exection in python"
 ---
 There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.
 
