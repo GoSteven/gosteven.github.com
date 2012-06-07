@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Steven You]]></title>
-  <link href="http://GoSteven.github.com/atom.xml" rel="self"/>
-  <link href="http://GoSteven.github.com/"/>
-  <updated>2012-06-07T22:24:42+10:00</updated>
-  <id>http://GoSteven.github.com/</id>
+  <link href="http://GoSteven.com/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2012-06-07T22:26:56+10:00</updated>
+  <id>http://GoSteven.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Download YouTube videos using python]]></title>
-    <link href="http://GoSteven.github.com/blog/2012/06/07/download-youtube-videos-using-python/"/>
+    <link href="http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python/"/>
     <updated>2012-06-07T13:17:00+10:00</updated>
-    <id>http://GoSteven.github.com/blog/2012/06/07/download-youtube-videos-using-python</id>
+    <id>http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python</id>
     <content type="html"><![CDATA[<p>I have searched around to find a simple way to download youtube video. However, google hasn’t provide an API for downloading, and youtube page content structure seems has changed a lot, some old post regarding how to download youtube video in <a href="http://abhinay.wordpress.com/2010/05/12/downloading-youtube-videos-using-python-one-liner/">one line python script</a> doesn’t work any more.</p>
 
 <p>Finally I find an actively repository on github and forked it: <a href="https://github.com/GoSteven/python-youtube-download">python-youtube-download</a>.  To make it simpler to use rather than selecting the definition and specifying the format, I added main script to enable it to run in one line:</p>
@@ -29,9 +29,9 @@
   
   <entry>
     <title type="html"><![CDATA[Concurrent tasks execution in Python]]></title>
-    <link href="http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/"/>
+    <link href="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/"/>
     <updated>2012-05-13T13:37:00+10:00</updated>
-    <id>http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python</id>
+    <id>http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python</id>
     <content type="html"><![CDATA[<p>There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.</p>
 
 <h3>First way: Manage the thread yourself</h3>
@@ -150,9 +150,9 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to ZSH]]></title>
-    <link href="http://GoSteven.github.com/blog/2012/05/10/switching-to-zsh/"/>
+    <link href="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/"/>
     <updated>2012-05-10T21:31:00+10:00</updated>
-    <id>http://GoSteven.github.com/blog/2012/05/10/switching-to-zsh</id>
+    <id>http://GoSteven.com/blog/2012/05/10/switching-to-zsh</id>
     <content type="html"><![CDATA[<p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
 
 <pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
@@ -185,9 +185,9 @@
   
   <entry>
     <title type="html"><![CDATA[Play around with Django]]></title>
-    <link href="http://GoSteven.github.com/blog/2012/03/18/play-around-with-django/"/>
+    <link href="http://GoSteven.com/blog/2012/03/18/play-around-with-django/"/>
     <updated>2012-03-18T22:24:00+11:00</updated>
-    <id>http://GoSteven.github.com/blog/2012/03/18/play-around-with-django</id>
+    <id>http://GoSteven.com/blog/2012/03/18/play-around-with-django</id>
     <content type="html"><![CDATA[<p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
 
 <p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
@@ -198,9 +198,9 @@
   
   <entry>
     <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
-    <link href="http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <link href="http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
     <updated>2011-12-29T00:11:00+11:00</updated>
-    <id>http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <id>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
     <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
 
 <p>I am not going to migrate my old blog post here, as those are mostly code snippets. Visit <a href="http://dev.gosteven.com">Steven&#8217;s Dev Blog</a> in case you are interested.</p>
