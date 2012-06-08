@@ -9,7 +9,7 @@
   <meta name="author" content="Steven You">
 
   
-  <meta name="description" content="I have searched around to find a simple way to download youtube video. However, google hasn’t provide an API for downloading, and youtube page &hellip;">
+  <meta name="description" content="This is an old topic from Jeff Dean ### Latency numbers every programmer should know L1 cache reference ......................... 0.5 ns Branch &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/08/latency-numbers-every-programmer-should-know/">Latency Numbers Every Programmer Should Know</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-08T13:44:00+10:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is an old topic from <a href="http://research.google.com/people/jeff/">Jeff Dean</a></p>
+
+<div><script src='https://gist.github.com/2843375.js?file='></script>
+<noscript><pre><code>### Latency numbers every programmer should know
+    L1 cache reference ......................... 0.5 ns
+    Branch mispredict ............................ 5 ns
+    L2 cache reference ........................... 7 ns
+    Mutex lock/unlock ........................... 25 ns
+    Main memory reference ...................... 100 ns             
+    Compress 1K bytes with Zippy ............. 3,000 ns  =   3 µs
+    Send 2K bytes over 1 Gbps network ....... 20,000 ns  =  20 µs
+    SSD random read ........................ 150,000 ns  = 150 µs
+    Read 1 MB sequentially from memory ..... 250,000 ns  = 250 µs
+    Round trip within same datacenter ...... 500,000 ns  = 0.5 ms
+    Read 1 MB sequentially from SSD* ..... 1,000,000 ns  =   1 ms
+    Disk seek ........................... 10,000,000 ns  =  10 ms
+    Read 1 MB sequentially from disk .... 20,000,000 ns  =  20 ms
+    Send packet CA-&gt;Netherlands-&gt;CA .... 150,000,000 ns  = 150 ms
+
+Assuming ~1GB/sec SSD
+
+![Visual representation of latencies](http://i.imgur.com/k0t1e.png)
+
+Visual chart provided by [ayshen](https://gist.github.com/ayshen)
+
+Data by [Jeff Dean](http://research.google.com/people/jeff/)
+
+Originally by [Peter Norvig](http://norvig.com/21-days.html#answers)</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -420,6 +486,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/08/latency-numbers-every-programmer-should-know/">Latency numbers every programmer should know</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/06/07/download-youtube-videos-using-python/">Download YouTube videos using python</a>
       </li>
     
@@ -433,10 +503,6 @@
     
       <li class="post">
         <a href="/blog/2012/03/18/play-around-with-django/">Play around with Django</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/29/setting-up-octopress-blog-on-github/">Setting up octopress blog on GitHub</a>
       </li>
     
   </ul>
