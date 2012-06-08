@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Steven You</title>
+  <meta name="author" content="Steven You">
+
+  
+  <meta name="description" content="There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://GoSteven.com/blog">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Steven You" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27859873-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Steven You</a></h1>
+  
+    <h2>A creative coder.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:GoSteven.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/aboutme">About</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/13/concurrent-tasks-execution-in-python/">Concurrent Tasks Execution in Python</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-13T13:37:00+10:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.</p>
+
+<h3>First way: Manage the thread yourself</h3>
+
+<p>I have a repo on Github, <a href="https://github.com/GoSteven/tumblrimgdownloader/blob/master/imgdl.py">Tumblr Image Downloader</a>, which is used for batch download images from a tumblr blog using tumblr API.</p>
+
+<p>Basically, there is a <em>task queue</em>:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>    <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and a <em>worker</em>:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>    <span class="k">def</span> <span class="nf">worker</span><span class="p">():</span>
+</span><span class='line'>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">download_img</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">save_path</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">q</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What the <em>download_img</em> function does is get the image url and save it to the <em>save_path</em>.</p>
+
+<p>The program will call the <em>download_imgs</em> function:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>    <span class="k">def</span> <span class="nf">download_imgs</span><span class="p">(</span><span class="n">imgs_src</span><span class="p">,</span> <span class="n">save_path</span><span class="p">,</span> <span class="n">num_workers</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_workers</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">t</span><span class="o">.</span><span class="n">setDaemon</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">img_src</span> <span class="ow">in</span> <span class="n">imgs_src</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">img_src</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">q</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">download_imgs</span><span class="p">(</span><span class="n">imgs_src</span><span class="p">,</span> <span class="n">save_path</span><span class="p">,</span> <span class="n">numthreads</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Better and Simpler way: Using concurrent.futures module</h3>
+
+<p><a href="http://www.python.org/dev/peps/pep-3148/">PEP 3148</a> gives the motivation for this module:</p>
+
+<blockquote><p>Python currently has powerful primitives to construct multi-threaded and multi-process applications but parallelizing simple operations requires a lot of work i.e. explicitly launching processes/threads, constructing a work/results queue, and waiting for completion or some other termination condition (e.g. failure, timeout). It is also difficult to design an application with a global process/thread limit when each component invents its own parallel execution strategy.</p></blockquote>
+
+<p>This module will make the life easier. Download link is <a href="http://pypi.python.org/pypi/futures">here</a>. There are two types of executor: ThreadPoolExecutor and ProcessPoolExecutor.</p>
+
+<p>I will take ThreadPoolExecutor for example:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">concurrent.futures</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">urllib.request</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;http://www.foxnews.com/&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;http://www.cnn.com/&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;http://europe.wsj.com/&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;http://www.bbc.co.uk/&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;http://some-made-up-domain.com/&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">load_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">future_to_url</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">load_url</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">url</span><span class="p">)</span>
+</span><span class='line'>                         <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">URLS</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">as_completed</span><span class="p">(</span><span class="n">future_to_url</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="n">future_to_url</span><span class="p">[</span><span class="n">future</span><span class="p">]</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%r</span><span class="s"> generated an exception: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span>
+</span><span class='line'>                                                     <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">()))</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%r</span><span class="s"> page is </span><span class="si">%d</span><span class="s"> bytes&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">())))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>-EOF-</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/10/switching-to-zsh/">Switching to ZSH</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T21:31:00+10:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
+
+<pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+</code></pre>
+
+<h4>The good thing</h4>
+
+<p>It works pretty awesome. It &#8220;acts extremely similar to bash&#8221;, but not always, which I will explain in the painful part. It does the typo correction which is very helpful to careless typers like me.</p>
+
+<h4>The pain during the switching</h4>
+
+<p>After typing around with zsh, I was going to spreading it. I am using Octopress for blogging, I am astonished when I find out zsh shows the git folder status in the prompt.</p>
+
+<p>However, when I using rake to create a new post, it shows <code>zsh: no matches found: new_post[Switching to ZSH]</code>. I thought it was the ruby gem version problem as I installed something for OPENSHIFT of RedHat. But, it&#8217;s not.</p>
+
+<p>The reason is zsh doesn&#8217;t know about the RVM function, RVM need to be loaded into the shell session as a function.</p>
+
+<p>Append</p>
+
+<pre><code>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+</code></pre>
+
+<p>to the .zshrc will fix the problem.</p>
+
+<h4>Investigate more</h4>
+
+<p>Go through the <a href="http://zsh.sourceforge.net/Guide/">zsh user guide</a>, enjoy!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/18/play-around-with-django/">Play Around With Django</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-18T22:24:00+11:00" pubdate data-updated="true">Mar 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
+
+<p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
+
+<p>Django-nonreal contain all the major functionalities of Django which can host pure Django application on google application. It just works awesome!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/29/setting-up-octopress-blog-on-github/">Setting Up Octopress Blog on GitHub</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-29T00:11:00+11:00" pubdate data-updated="true">Dec 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/13/concurrent-tasks-execution-in-python/">Concurrent tasks execution in Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/10/switching-to-zsh/">Switching to ZSH</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/18/play-around-with-django/">Play around with Django</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/29/setting-up-octopress-blog-on-github/">Setting up octopress blog on GitHub</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("steven_you", 7, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/steven_you" class="twitter-follow-button" data-show-count="false">Follow @steven_you</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Steven You -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
