@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Steven You - Steven You</title>
+  <title>Vertically scale web application via using non-blocking I/O - Steven You</title>
   <meta name="author" content="Steven You">
 
   
-  <meta name="description" content="Steven You About Howdy, I am Steven(Silin) You. A software engineer living in Sydney. I Like VI Python Git Mac Shell ObjectiveC UNSW C# Guitar &hellip;">
-  
+  <meta name="description" content="I have been working on web application scaling for a while. There are lots of interesting stuff. I will scale vertically first. Non-blocking I/O &hellip;">
+  <meta name="keywords" content=" vertically scale, non-blocking IO, web">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://GoSteven.com/aboutme">
+  <link rel="canonical" href="http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,66 +76,92 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Steven You</h1>
+    
+      <h1 class="entry-title">Vertically Scale Web Application via Using Non-blocking I/O</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T21:51:00+10:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <h3>About</h3>
 
 
-<p></p>
+<div class="entry-content"><p>I have been working on web application scaling for a while. There are lots of interesting stuff. I will scale vertically first.</p>
 
-<p>Howdy, I am Steven(Silin) You. A software engineer living in Sydney.</p>
+<h2>Non-blocking I/O</h2>
 
+<p>Blocking I/O means that the program execution is put on hold while the I/O is going on, which means the program waits until the I/O is finished and then continues it&#8217;s execution.</p>
 
-<h3>I Like</h3>
+<p>However, in non-blocking I/O, the program can continue during I/O operations, and is notified via a callback when IO operation is finished. This forces programmers to design programs differently making them perform a lot better.</p>
 
+<p>The Non-blocking I/O was supported by most Operation Systems. On Windows there is underlying OS support for non-blocking I/O, and Microsoft&#8217;s CLR(Common Language Runtime, virtual machine component of .NET framework) takes advantage of that.</p>
 
-<p></p>
+<h2>Non-blocking I/O for web applications</h2>
 
-<p>VI Python Git Mac Shell ObjectiveC UNSW C# Guitar Hiking</p>
+<p>The implementation of non-blocking IO contribute the success of projects like <a href="http://nodejs.org/">node.js</a>.</p>
 
+<p>For common web applications like JAVA Servlet, Apache web server , there is a design flaw, which introduce lots of overheads consume lots of mem and cpu because the thread is expensive. Non-blocking I/O is smart as the pending I/O connections will not consume any resources. On the other hand, underlying OS will be exhausted when looping through threads and checking status if each request will be handled via threads.</p>
 
-<h3>I Don&#8217;t Like</h3>
+<p>Here is a good slide describe node.js:</p>
 
-
-<p></p>
-
-<p>Reinstall</p>
-
-
-<p></p>
-
-<h3>My Links</h3>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/2693037" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
 
 
-<p></p>
-
-<ul>
- <li>Dev Blog: <a href="http://dev.gosteven.com">dev.gosteven.com</a> </li>
- <li>github: <a href="https://github.com/gosteven">github.com/gosteven</a> </li>
- <li>Twitter: <a href="http://twitter.com/steven_you">@steven_you</a></li> 
- <li>About Me: <a href="http://about.me/yousilin">about.me/yousilin</a></li>      
- <li>Google+: <a href="http://profiles.google.com/yousilin">profiles.google.com/yousilin</a> </li>
- <li>facebook: <a href="http://www.facebook.com/silinyou">facebook.com/silinyou</a></li> 
- <li>Tumblr tumblog: <a href="http://t.gosteven.com">t.gosteven.com</a> </li> 
- <li>In CSE UNSW: <a href="http://www.cse.unsw.edu.au/~syou679/">SYOU</a></li> 
- <li>Email me: steven [at] the naked domain as this webpage</li> 
-</ul>
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/marcusf/nonblocking-io-event-loops-and-nodejs" title="Non-blocking I/O, Event loops and node.js" target="_blank">Non-blocking I/O, Event loops and node.js</a> </strong> from <strong><a href="http://www.slideshare.net/marcusf" target="_blank">Marcus Frödin</a></strong> </div></p>
+</div>
 
 
-<p></p>
-
-  
-    <footer>
+  <footer>
+    <p class="meta">
       
-      
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/aboutme/index.html" data-via="steven_you" data-counturl="http://GoSteven.com/aboutme/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Steven You</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T21:51:00+10:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/technique/'>technique</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/" data-via="steven_you" data-counturl="http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -145,9 +171,14 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/06/08/latency-numbers-every-programmer-should-know/" title="Previous Post: Latency numbers every programmer should know">&laquo; Latency numbers every programmer should know</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
