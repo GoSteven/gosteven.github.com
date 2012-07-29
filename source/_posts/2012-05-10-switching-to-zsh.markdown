@@ -3,7 +3,7 @@ layout: post
 title: "Switching to ZSH"
 date: 2012-05-10 21:31
 comments: true
-categories: 
+categories: shell
 ---
 Following [Mako](http://en.wikipedia.org/wiki/Benjamin_Mako_Hill), after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:
     
