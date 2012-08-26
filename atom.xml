@@ -4,7 +4,7 @@
   <title><![CDATA[Steven You]]></title>
   <link href="http://GoSteven.com/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
-  <updated>2012-07-29T16:38:52+10:00</updated>
+  <updated>2012-08-26T17:58:09+10:00</updated>
   <id>http://GoSteven.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
@@ -12,6 +12,66 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Ranger visual file manager]]></title>
+    <link href="http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
+    <updated>2012-08-26T17:10:00+10:00</updated>
+    <id>http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+    <content type="html"><![CDATA[<p>If you spend more than 2 hour with terminal everyday, like me. There is a tool you wish you could know earlier &#8211; ranger.</p>
+
+<p><img src="http://GoSteven.com/downloads/20120826_ranger.png" title="[Ranger [Ranger File Manager zsh]]" ></p>
+
+<!--more-->
+
+
+<p>Very powerfull and very handy. Get the source from <a href="http://www.nongnu.org/ranger/">here</a> and mannual in <a href="http://www.nongnu.org/ranger/ranger.1.html">here</a>.</p>
+
+<p>Navigate use hjkl like vim and do what every finder can do with preview. (It can even preview photos)</p>
+
+<p>If you are using zsh like me, to enable ranger in zsh, follow the steps below:</p>
+
+<h4>1. In terminal:</h4>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>    cat &gt;&gt; ~/.zshrc
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>2. Past the following code:</h4>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>    <span class="c">#ranger file manager</span>
+</span><span class='line'>    <span class="c"># source from, or add to ~/.zshrc</span>
+</span><span class='line'>    <span class="c"># Ctrl-O opens zsh at the current location, and on exit, cd into ranger&#39;s last location.</span>
+</span><span class='line'>    ranger <span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="nb">command </span>ranger <span class="s2">&quot;$(pwd)&quot;</span> &lt;<span class="nv">$TTY</span>
+</span><span class='line'>        print -n <span class="s2">&quot;\033[A&quot;</span>
+</span><span class='line'>        zle <span class="o">&amp;&amp;</span> zle -I
+</span><span class='line'>        <span class="nb">cd</span> <span class="s2">&quot;$(grep \^\&#39; ~/.ranger/bookmarks | cut -b3-)&quot;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    zle -N ranger
+</span><span class='line'>    bindkey <span class="s2">&quot;^O&quot;</span> ranger
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>3. Press Ctrl + D to end cat.</h4>
+
+<p>Then you are good to go!</p>
+
+<p>&#8211;EOF&#8211;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vertically scale web application via using non-blocking I/O]]></title>
