@@ -4,7 +4,7 @@
   <title><![CDATA[Steven You]]></title>
   <link href="http://GoSteven.com/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
-  <updated>2012-09-02T19:17:04+10:00</updated>
+  <updated>2012-09-02T20:35:02+10:00</updated>
   <id>http://GoSteven.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
@@ -12,6 +12,244 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Interview questions - programming]]></title>
+    <link href="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/"/>
+    <updated>2012-09-02T19:37:00+10:00</updated>
+    <id>http://GoSteven.com/blog/2012/09/02/interview-questions-programming</id>
+    <content type="html"><![CDATA[<p>Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and programming tricks. I am gonna list some interesting ones.</p>
+
+<h2>1. Check if at least 2 out of 3 booleans is true</h2>
+
+<p>This one come from <a href="http://stackoverflow.com/questions/3076078/check-if-at-least-2-out-of-3-booleans-is-true">StackOverflow</a>. I like to solve simple problem in one line which is:</p>
+
+<pre><code>return a ?(b || c):(b &amp;&amp; c);
+</code></pre>
+
+<p>or</p>
+
+<pre><code>return a &amp;&amp;(b || c)||(b &amp;&amp; c);
+</code></pre>
+
+<p>or, here is some awesomeness:</p>
+
+<pre><code>return a ^ b ? c : a
+</code></pre>
+
+<!--more-->
+
+
+<h2>2. Overloading is compile-time static binding and Overriding is run-time dynamic binding</h2>
+
+<p>In junior Java developer interviews, this is a popular question, the question would be:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">Base</span><span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Derived</span> <span class="kd">extends</span> <span class="n">Base</span><span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Test</span><span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodA</span><span class="o">(</span><span class="n">Base</span> <span class="n">b</span><span class="o">){</span>
+</span><span class='line'>       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test.methodA(Base)&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodA</span><span class="o">(</span><span class="n">Derived</span> <span class="n">b</span><span class="o">){</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test.methodA(Derived)&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="o">){</span>
+</span><span class='line'>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
+</span><span class='line'>        <span class="n">Base</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Base</span><span class="o">();</span>
+</span><span class='line'>        <span class="n">Base</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">t</span><span class="o">.</span><span class="na">methodA</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">t</span><span class="o">.</span><span class="na">methodA</span><span class="o">(</span><span class="n">d</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>What is the output?</strong></p>
+
+<p>If your answer is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Derived)
+</code></pre>
+
+<p>This is wrong. For your surprise the actual output is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Base)
+</code></pre>
+
+<p>This is because the overloading is compile-time binding. When the compiler trying to figure out which <code>methodA</code> it is in <code>t.methodA(d)</code>, as far as the compiler knows is the definition of <code>d</code> is <code>Base</code>.</p>
+
+<p>So, must be careful when overriding <code>Object.equals(otherObject)</code> function, override like this: <code>public boolean equals(Object other) {...}</code></p>
+
+<h2>3. Java Object life cycle</h2>
+
+<ol>
+<li>Created</li>
+<li>In use (strongly reachable)</li>
+<li>Invisible</li>
+<li>Unreachable</li>
+<li>Collected</li>
+<li>Finalized</li>
+<li>Deallocated</li>
+</ol>
+
+
+<h2>4. How to declare i and j to make it be an infinite loop</h2>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">while</span><span class="o">(</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">j</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">j</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="o">){}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This question also comes from <a href="http://stackoverflow.com/questions/8015146/how-to-declare-i-and-j-to-make-it-be-an-infinite-loop">StackOverflow</a>.</p>
+
+<p>If <code>i</code> and <code>j</code> are primitive Java type, <code>i != j</code> means the int(or float, or whatever) value not equal, there will be no answer. However, <code>i != j</code> also means <code>i</code> and <code>j</code> are not the same Object. So, one of the answer is:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Integer</span> <span class="n">i</span><span class="o">=</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+</span><span class='line'><span class="n">Integer</span> <span class="n">j</span><span class="o">=</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="o">)+</span><span class="s">&quot; &quot;</span><span class="o">+(</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">j</span><span class="o">)+</span><span class="s">&quot; &quot;</span><span class="o">+(</span><span class="n">i</span><span class="o">!=</span><span class="n">j</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>5. Invoke a java method when given the method name as a string</h2>
+
+<p>This question is very easy for scripting languages like Python and Perl. But for strong-type language like Java and C# we need a powerful tool called <strong>reflector</strong>.</p>
+
+<blockquote><p>Coding from the hip, it would be something like:</p></blockquote>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">reflect</span><span class="o">.</span><span class="na">Method</span> <span class="n">method</span><span class="o">;</span>
+</span><span class='line'><span class="k">try</span><span class="o">{</span>
+</span><span class='line'>    <span class="n">method</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getMethod</span><span class="o">(</span><span class="n">methodName</span><span class="o">,</span> <span class="n">param1</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">param2</span><span class="o">.</span><span class="na">class</span><span class="o">,..);</span>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SecurityException</span> <span class="n">e</span><span class="o">){</span>
+</span><span class='line'>    <span class="c1">// ...</span>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NoSuchMethodException</span> <span class="n">e</span><span class="o">){</span>
+</span><span class='line'>    <span class="c1">// ...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The parameters identify the very specific method you need (if there are several overloaded available, if the method has no arguments, only give methodName).
+Then you invoke that method by calling</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">try</span><span class="o">{</span>
+</span><span class='line'>    <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">obj</span><span class="o">,</span> <span class="n">arg1</span><span class="o">,</span> <span class="n">arg2</span><span class="o">,...);</span>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">IllegalArgumentException</span> <span class="n">e</span><span class="o">){</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">IllegalAccessException</span> <span class="n">e</span><span class="o">){</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">InvocationTargetException</span> <span class="n">e</span><span class="o">){</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Again, leave out the arguments in .invoke, if you don&#8217;t have any. But yeah. Read about <a href="http://java.sun.com/docs/books/tutorial/reflect/index.html">Java Reflection</a>.</p>
+
+<p>BTW, solution above is from <a href="http://stackoverflow.com/questions/160970/how-do-i-invoke-a-java-method-when-given-the-method-name-as-a-string">StackOverflow</a>.</p>
+
+<h2>6. what is difference between string literal and new String(&#8220;&#8230;&#8221;)</h2>
+
+<p>The question is:</p>
+
+<blockquote><p>What is difference between</p></blockquote>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;abc&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The answer from <a href="http://stackoverflow.com/questions/3297867/difference-between-string-object-and-string-literal">StackOverflow</a> is:</p>
+
+<p>When you use a string literal the string can be <a href="http://en.wikipedia.org/wiki/String_interning">interned</a> but when you use new String(&#8220;&#8230;&#8221;) you get a new string object.</p>
+
+<p>In this example both string literals refer the same object:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span>  <span class="c1">// True</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here two different objects are created and they have different references:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;abc&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">String</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;abc&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">d</span><span class="o">);</span>  <span class="c1">// False</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In general you should use the string literal notation when possible. It is easier to read and it gives the compiler a chance to optimize your code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Multiple sliders on one page - jquery]]></title>
