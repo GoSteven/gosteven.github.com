@@ -7,11 +7,11 @@ sharing: true
 footer: true
 ---
 <h3>About</h3> 
-<p>Howdy, I am Steven(Silin) You. A software engineer living in Sydney.</p>
+<p>I am Steven(Silin) You. A software engineer living in Sydney.</p>
 <h3>I Like</h3> 
-<p>VI Python Git Mac Shell ObjectiveC UNSW C# Guitar Hiking</p>
+<p>VI Python Git OSX Shell ObjectiveC UNSW C# Guitar Hiking</p>
 <h3>I Don't Like</h3> 
-<p>Reinstall</p> 
+<p>Reinstall Brute-force</p> 
 <h3>My Links</h3> 
 <ul>
  <li>Dev Blog: <a href="http://dev.gosteven.com">dev.gosteven.com</a> </li>
