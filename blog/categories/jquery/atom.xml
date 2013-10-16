@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jquery | Steven You]]></title>
+  <link href="http://GoSteven.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple sliders on one page - jquery]]></title>
+    <link href="http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
+    <updated>2012-08-29T21:52:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
+    <content type="html"><![CDATA[<p>I was trying to put several sliders on the same page. There are actually lots of tutorials can tell you how to do that, like <a href="http://demo.tutorialzine.com/2011/12/what-you-need-to-know-html5-range-input/slider-jqueryui.html">this one</a>.</p>
+
+<p>However, I want multiple, like this:</p>
+
+<p><img src="/downloads/20120829_slider.png" title="[Slider [Multiple slider on one page]]" ></p>
+
+<!--more-->
+
+
+<p>In the sample code, the javascript looks like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>They find the html element by id. But when I generate sliders in a loop, it would be nasty to assign ids to each slider:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>Fortunately  <code>each()</code> in jquery is very handy, we can get all the divs, and loop through them:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>When using <code>each()</code> sometime you could encounter error like:</p>
+
+<blockquote><p> "Uncaught TypeError: Object #<HTMLDivElement> has no method 'find'"</p></blockquote>
+
+<p>This is because the <code>obj</code> in <code>$('.contSlider').each(function(i,obj) {</code> refers to a DOM object rather than a jquery object.</p>
+
+<p>Add <code>$()</code> to make it a jquery object like this: <code>$(obj).find('.currentValue')</code>.</p>
+
+<p>In the end, what I got is:</p>
+
+<p><link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" /></p>
+
+<div class="contSlider">
+     <h4>slider 1</h4>
+     <div class="slider"></div>
+     <p class="note">Current value: <span class="currentValue">0</span></p>
+</div>
+
+
+<div class="contSlider">
+     <h4>slider 2</h4>
+     <div class="slider"></div>
+     <p class="note">Current value: <span class="currentValue">0</span></p>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+
+<script >
+    $(function(){
+        $('.contSlider').each(function(i,obj) {
+            var currentValue = $(obj).find('.currentValue')
+            var slider = $(obj).find('.slider')
+            slider.slider({
+                max: 500,
+                min: 0,
+                slide: function(event, ui) {
+                    currentValue.html(ui.value);
+                }
+            });
+        });
+    });
+</script>
+
+
+<p>--EOF--</p>
+]]></content>
+  </entry>
+  
+</feed>

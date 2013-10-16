@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jogging | Steven You]]></title>
+  <link href="http://GoSteven.com/blog/categories/jogging/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Interview questions - programming]]></title>
+    <link href="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/"/>
+    <updated>2012-09-02T19:37:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/09/02/interview-questions-programming</id>
+    <content type="html"><![CDATA[<p>Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and programming tricks. I am gonna list some interesting ones.</p>
+
+<h2>1. Check if at least 2 out of 3 booleans is true</h2>
+
+<p>This one come from <a href="http://stackoverflow.com/questions/3076078/check-if-at-least-2-out-of-3-booleans-is-true">StackOverflow</a>. I like to solve simple problem in one line which is:</p>
+
+<pre><code>return a ?(b || c):(b &amp;&amp; c);
+</code></pre>
+
+<p>or</p>
+
+<pre><code>return a &amp;&amp;(b || c)||(b &amp;&amp; c);
+</code></pre>
+
+<p>or, here is some awesomeness:</p>
+
+<pre><code>return a ^ b ? c : a
+</code></pre>
+
+<!--more-->
+
+
+<h2>2. Overloading is compile-time static binding and Overriding is run-time dynamic binding</h2>
+
+<p>In junior Java developer interviews, this is a popular question, the question would be:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p><strong>What is the output?</strong></p>
+
+<p>If your answer is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Derived)
+</code></pre>
+
+<p>This is wrong. For your surprise the actual output is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Base)
+</code></pre>
+
+<p>This is because the overloading is compile-time binding. When the compiler trying to figure out which <code>methodA</code> it is in <code>t.methodA(d)</code>, as far as the compiler knows is the definition of <code>d</code> is <code>Base</code>.</p>
+
+<p>So, must be careful when overriding <code>Object.equals(otherObject)</code> function, override like this: <code>public boolean equals(Object other) {...}</code></p>
+
+<h2>3. Java Object life cycle</h2>
+
+<ol>
+<li>Created</li>
+<li>In use (strongly reachable)</li>
+<li>Invisible</li>
+<li>Unreachable</li>
+<li>Collected</li>
+<li>Finalized</li>
+<li>Deallocated</li>
+</ol>
+
+
+<h2>4. How to declare i and j to make it be an infinite loop</h2>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>This question also comes from <a href="http://stackoverflow.com/questions/8015146/how-to-declare-i-and-j-to-make-it-be-an-infinite-loop">StackOverflow</a>.</p>
+
+<p>If <code>i</code> and <code>j</code> are primitive Java type, <code>i != j</code> means the int(or float, or whatever) value not equal, there will be no answer. However, <code>i != j</code> also means <code>i</code> and <code>j</code> are not the same Object. So, one of the answer is:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<h2>5. Invoke a java method when given the method name as a string</h2>
+
+<p>This question is very easy for scripting languages like Python and Perl. But for strong-type language like Java and C# we need a powerful tool called <strong>reflector</strong>.</p>
+
+<blockquote><p>Coding from the hip, it would be something like:</p></blockquote>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>The parameters identify the very specific method you need (if there are several overloaded available, if the method has no arguments, only give methodName).
+Then you invoke that method by calling</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>Again, leave out the arguments in .invoke, if you don't have any. But yeah. Read about <a href="http://java.sun.com/docs/books/tutorial/reflect/index.html">Java Reflection</a>.</p>
+
+<p>BTW, solution above is from <a href="http://stackoverflow.com/questions/160970/how-do-i-invoke-a-java-method-when-given-the-method-name-as-a-string">StackOverflow</a>.</p>
+
+<h2>6. what is difference between string literal and new String("...")</h2>
+
+<p>The question is:</p>
+
+<blockquote><p>What is difference between
+Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module
+and
+Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p></blockquote>
+
+<p>The answer from <a href="http://stackoverflow.com/questions/3297867/difference-between-string-object-and-string-literal">StackOverflow</a> is:</p>
+
+<p>When you use a string literal the string can be <a href="http://en.wikipedia.org/wiki/String_interning">interned</a> but when you use new String("...") you get a new string object.</p>
+
+<p>In this example both string literals refer the same object:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>Here two different objects are created and they have different references:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>In general you should use the string literal notation when possible. It is easier to read and it gives the compiler a chance to optimize your code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Play around with Django]]></title>
+    <link href="http://GoSteven.com/blog/2012/03/18/play-around-with-django/"/>
+    <updated>2012-03-18T22:24:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/03/18/play-around-with-django</id>
+    <content type="html"><![CDATA[<p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
+
+<p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
+
+<p>Django-nonreal contain all the major functionalities of Django which can host pure Django application on google application. It just works awesome!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
+    <link href="http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <updated>2011-12-29T00:11:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
+
+<p>I am not going to migrate my old blog post here, as those are mostly code snippets. Visit <a href="http://dev.gosteven.com">Steven's Dev Blog</a> in case you are interested.</p>
+]]></content>
+  </entry>
+  
+</feed>

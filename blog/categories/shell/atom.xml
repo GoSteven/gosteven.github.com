@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: shell | Steven You]]></title>
+  <link href="http://GoSteven.com/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to ZSH]]></title>
+    <link href="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/"/>
+    <updated>2012-05-10T21:31:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/05/10/switching-to-zsh</id>
+    <content type="html"><![CDATA[<p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
+
+<pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+</code></pre>
+
+<h4>The good thing</h4>
+
+<p>It works pretty awesome. It "acts extremely similar to bash", but not always, which I will explain in the painful part. It does the typo correction which is very helpful to careless typers like me.</p>
+
+<h4>The pain during the switching</h4>
+
+<p>After typing around with zsh, I was going to spreading it. I am using Octopress for blogging, I am astonished when I find out zsh shows the git folder status in the prompt.</p>
+
+<p>However, when I using rake to create a new post, it shows <code>zsh: no matches found: new_post[Switching to ZSH]</code>. I thought it was the ruby gem version problem as I installed something for OPENSHIFT of RedHat. But, it's not.</p>
+
+<p>The reason is zsh doesn't know about the RVM function, RVM need to be loaded into the shell session as a function.</p>
+
+<p>Append</p>
+
+<pre><code>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+</code></pre>
+
+<p>to the .zshrc will fix the problem.</p>
+
+<h4>Investigate more</h4>
+
+<p>Go through the <a href="http://zsh.sourceforge.net/Guide/">zsh user guide</a>, enjoy!</p>
+]]></content>
+  </entry>
+  
+</feed>

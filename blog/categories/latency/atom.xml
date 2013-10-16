@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: latency | Steven You]]></title>
+  <link href="http://GoSteven.com/blog/categories/latency/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Latency numbers every programmer should know]]></title>
+    <link href="http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know/"/>
+    <updated>2012-06-08T13:44:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know</id>
+    <content type="html"><![CDATA[<p>This is an old topic from <a href="http://research.google.com/people/jeff/">Jeff Dean</a>
+<div><script src='https://gist.github.com/2843375.js?file='></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/2843375&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

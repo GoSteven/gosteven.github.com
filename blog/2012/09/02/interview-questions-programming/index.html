@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Steven You - Steven You</title>
+  <title>Interview questions - programming - Steven You</title>
   <meta name="author" content="Steven You">
 
   
-  <meta name="description" content="Steven You About Howdy, I am Steven(Silin) You. A software engineer living in Sydney. I am interested in algorithm, parallel computing, distributed &hellip;">
-  
+  <meta name="description" content="Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and &hellip;">
+  <meta name="keywords" content="interview questions, software engineer interview, java interview">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://GoSteven.com">
+  <link rel="canonical" href="http://GoSteven.com/blog/2012/09/02/interview-questions-programming">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,40 +76,178 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Steven You</h1>
     
-  </header>
-  
-  <h3>About</h3> 
-<p>Howdy, I am Steven(Silin) You. A software engineer living in Sydney. </p>
-<p>I am interested in algorithm, parallel computing, distributed systems. Recently obsessed with scalable programming.</p>
-<h3>I Like</h3> 
-<p>VI Python Git Mac Shell Non-blocking Scaling ObjectiveC UNSW C# Guitar Hiking</p>
-<h3>I Don&#8217;t Like</h3> 
-<p>Reinstall Brute-force</p> 
-<h3>My Links</h3> 
-<ul>
- <li>Dev Blog: <a href="http://dev.gosteven.com">dev.gosteven.com</a> </li>
- <li>github: <a href="https://github.com/gosteven">github.com/gosteven</a> </li>
- <li>StackOverflow: <a href="http://careers.stackoverflow.com/stevenyou">careers.stackoverflow.com/stevenyou</a> </li>
- <li>Twitter: <a href="http://twitter.com/steven_you">@steven_you</a></li> 
- <li>About Me: <a href="http://about.me/yousilin">about.me/yousilin</a></li> 	  
- <li>Google+: <a href="http://profiles.google.com/yousilin">profiles.google.com/yousilin</a> </li>
- <li>Tumblr tumblog: <a href="http://t.gosteven.com">t.gosteven.com</a> </li> 
- <li>In CSE UNSW: <a href="http://www.cse.unsw.edu.au/~syou679/">SYOU</a></li> 
- <li>Email me: steven [at] the naked domain as this webpage</li> 
-</ul> 
+      <h1 class="entry-title">Interview Questions - Programming</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
 
   
-    <footer>
+
+
+<time datetime="2012-09-02T19:37:00+00:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and programming tricks. I am gonna list some interesting ones.</p>
+
+<h2>1. Check if at least 2 out of 3 booleans is true</h2>
+
+<p>This one come from <a href="http://stackoverflow.com/questions/3076078/check-if-at-least-2-out-of-3-booleans-is-true">StackOverflow</a>. I like to solve simple problem in one line which is:</p>
+
+<pre><code>return a ?(b || c):(b &amp;&amp; c);
+</code></pre>
+
+<p>or</p>
+
+<pre><code>return a &amp;&amp;(b || c)||(b &amp;&amp; c);
+</code></pre>
+
+<p>or, here is some awesomeness:</p>
+
+<pre><code>return a ^ b ? c : a
+</code></pre>
+
+<!--more-->
+
+
+<h2>2. Overloading is compile-time static binding and Overriding is run-time dynamic binding</h2>
+
+<p>In junior Java developer interviews, this is a popular question, the question would be:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p><strong>What is the output?</strong></p>
+
+<p>If your answer is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Derived)
+</code></pre>
+
+<p>This is wrong. For your surprise the actual output is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Base)
+</code></pre>
+
+<p>This is because the overloading is compile-time binding. When the compiler trying to figure out which <code>methodA</code> it is in <code>t.methodA(d)</code>, as far as the compiler knows is the definition of <code>d</code> is <code>Base</code>.</p>
+
+<p>So, must be careful when overriding <code>Object.equals(otherObject)</code> function, override like this: <code>public boolean equals(Object other) {...}</code></p>
+
+<h2>3. Java Object life cycle</h2>
+
+<ol>
+<li>Created</li>
+<li>In use (strongly reachable)</li>
+<li>Invisible</li>
+<li>Unreachable</li>
+<li>Collected</li>
+<li>Finalized</li>
+<li>Deallocated</li>
+</ol>
+
+
+<h2>4. How to declare i and j to make it be an infinite loop</h2>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>This question also comes from <a href="http://stackoverflow.com/questions/8015146/how-to-declare-i-and-j-to-make-it-be-an-infinite-loop">StackOverflow</a>.</p>
+
+<p>If <code>i</code> and <code>j</code> are primitive Java type, <code>i != j</code> means the int(or float, or whatever) value not equal, there will be no answer. However, <code>i != j</code> also means <code>i</code> and <code>j</code> are not the same Object. So, one of the answer is:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<h2>5. Invoke a java method when given the method name as a string</h2>
+
+<p>This question is very easy for scripting languages like Python and Perl. But for strong-type language like Java and C# we need a powerful tool called <strong>reflector</strong>.</p>
+
+<blockquote><p>Coding from the hip, it would be something like:</p></blockquote>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>The parameters identify the very specific method you need (if there are several overloaded available, if the method has no arguments, only give methodName).
+Then you invoke that method by calling</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Again, leave out the arguments in .invoke, if you don&#8217;t have any. But yeah. Read about <a href="http://java.sun.com/docs/books/tutorial/reflect/index.html">Java Reflection</a>.</p>
+
+<p>BTW, solution above is from <a href="http://stackoverflow.com/questions/160970/how-do-i-invoke-a-java-method-when-given-the-method-name-as-a-string">StackOverflow</a>.</p>
+
+<h2>6. what is difference between string literal and new String(&#8220;&#8230;&#8221;)</h2>
+
+<p>The question is:</p>
+
+<blockquote><p>What is difference between
+Liquid error: undefined method <code>Py_IsInitialized' for RubyPython::Python:Module
+and
+Liquid error: undefined method</code>Py_IsInitialized&#8217; for RubyPython::Python:Module</p></blockquote>
+
+<p>The answer from <a href="http://stackoverflow.com/questions/3297867/difference-between-string-object-and-string-literal">StackOverflow</a> is:</p>
+
+<p>When you use a string literal the string can be <a href="http://en.wikipedia.org/wiki/String_interning">interned</a> but when you use new String(&#8220;&#8230;&#8221;) you get a new string object.</p>
+
+<p>In this example both string literals refer the same object:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Here two different objects are created and they have different references:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>In general you should use the string literal notation when possible. It is easier to read and it gives the compiler a chance to optimize your code.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-      
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/index.html" data-via="steven_you" data-counturl="http://GoSteven.com/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Steven You</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-02T19:37:00+00:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jogging/'>Jogging</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/" data-via="steven_you" data-counturl="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -119,9 +257,14 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/08/29/multiple-sliders-on-one-page-jquery/" title="Previous Post: Multiple sliders on one page - jquery">&laquo; Multiple sliders on one page - jquery</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -239,8 +382,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://GoSteven.com/index.html';
-        var disqus_url = 'http://GoSteven.com/index.html';
+        var disqus_identifier = 'http://GoSteven.com/blog/2012/09/02/interview-questions-programming/';
+        var disqus_url = 'http://GoSteven.com/blog/2012/09/02/interview-questions-programming/';
         var disqus_script = 'embed.js';
       
     (function () {

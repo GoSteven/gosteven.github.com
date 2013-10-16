@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Steven You - Steven You</title>
+  <title>Switching to ZSH - Steven You</title>
   <meta name="author" content="Steven You">
 
   
-  <meta name="description" content="Steven You About Howdy, I am Steven(Silin) You. A software engineer living in Sydney. I am interested in algorithm, parallel computing, distributed &hellip;">
+  <meta name="description" content="Following Mako, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world: curl -L https:// &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://GoSteven.com">
+  <link rel="canonical" href="http://GoSteven.com/blog/2012/05/10/switching-to-zsh">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,40 +76,97 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Steven You</h1>
     
-  </header>
-  
-  <h3>About</h3> 
-<p>Howdy, I am Steven(Silin) You. A software engineer living in Sydney. </p>
-<p>I am interested in algorithm, parallel computing, distributed systems. Recently obsessed with scalable programming.</p>
-<h3>I Like</h3> 
-<p>VI Python Git Mac Shell Non-blocking Scaling ObjectiveC UNSW C# Guitar Hiking</p>
-<h3>I Don&#8217;t Like</h3> 
-<p>Reinstall Brute-force</p> 
-<h3>My Links</h3> 
-<ul>
- <li>Dev Blog: <a href="http://dev.gosteven.com">dev.gosteven.com</a> </li>
- <li>github: <a href="https://github.com/gosteven">github.com/gosteven</a> </li>
- <li>StackOverflow: <a href="http://careers.stackoverflow.com/stevenyou">careers.stackoverflow.com/stevenyou</a> </li>
- <li>Twitter: <a href="http://twitter.com/steven_you">@steven_you</a></li> 
- <li>About Me: <a href="http://about.me/yousilin">about.me/yousilin</a></li> 	  
- <li>Google+: <a href="http://profiles.google.com/yousilin">profiles.google.com/yousilin</a> </li>
- <li>Tumblr tumblog: <a href="http://t.gosteven.com">t.gosteven.com</a> </li> 
- <li>In CSE UNSW: <a href="http://www.cse.unsw.edu.au/~syou679/">SYOU</a></li> 
- <li>Email me: steven [at] the naked domain as this webpage</li> 
-</ul> 
+      <h1 class="entry-title">Switching to ZSH</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
 
   
-    <footer>
+
+
+<time datetime="2012-05-10T21:31:00+00:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
+
+<pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+</code></pre>
+
+<h4>The good thing</h4>
+
+<p>It works pretty awesome. It &#8220;acts extremely similar to bash&#8221;, but not always, which I will explain in the painful part. It does the typo correction which is very helpful to careless typers like me.</p>
+
+<h4>The pain during the switching</h4>
+
+<p>After typing around with zsh, I was going to spreading it. I am using Octopress for blogging, I am astonished when I find out zsh shows the git folder status in the prompt.</p>
+
+<p>However, when I using rake to create a new post, it shows <code>zsh: no matches found: new_post[Switching to ZSH]</code>. I thought it was the ruby gem version problem as I installed something for OPENSHIFT of RedHat. But, it&#8217;s not.</p>
+
+<p>The reason is zsh doesn&#8217;t know about the RVM function, RVM need to be loaded into the shell session as a function.</p>
+
+<p>Append</p>
+
+<pre><code>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+</code></pre>
+
+<p>to the .zshrc will fix the problem.</p>
+
+<h4>Investigate more</h4>
+
+<p>Go through the <a href="http://zsh.sourceforge.net/Guide/">zsh user guide</a>, enjoy!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-      
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/index.html" data-via="steven_you" data-counturl="http://GoSteven.com/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Steven You</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T21:31:00+00:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/shell/'>shell</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/" data-via="steven_you" data-counturl="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -119,9 +176,16 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/03/18/play-around-with-django/" title="Previous Post: Play around with Django">&laquo; Play around with Django</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/13/concurrent-tasks-execution-in-python/" title="next Post: Concurrent tasks execution in Python">Concurrent tasks execution in Python &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -239,8 +303,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://GoSteven.com/index.html';
-        var disqus_url = 'http://GoSteven.com/index.html';
+        var disqus_identifier = 'http://GoSteven.com/blog/2012/05/10/switching-to-zsh/';
+        var disqus_url = 'http://GoSteven.com/blog/2012/05/10/switching-to-zsh/';
         var disqus_script = 'embed.js';
       
     (function () {

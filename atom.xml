@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Steven You]]></title>
+  <link href="http://GoSteven.com/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Interview questions - programming]]></title>
+    <link href="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/"/>
+    <updated>2012-09-02T19:37:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/09/02/interview-questions-programming</id>
+    <content type="html"><![CDATA[<p>Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and programming tricks. I am gonna list some interesting ones.</p>
+
+<h2>1. Check if at least 2 out of 3 booleans is true</h2>
+
+<p>This one come from <a href="http://stackoverflow.com/questions/3076078/check-if-at-least-2-out-of-3-booleans-is-true">StackOverflow</a>. I like to solve simple problem in one line which is:</p>
+
+<pre><code>return a ?(b || c):(b &amp;&amp; c);
+</code></pre>
+
+<p>or</p>
+
+<pre><code>return a &amp;&amp;(b || c)||(b &amp;&amp; c);
+</code></pre>
+
+<p>or, here is some awesomeness:</p>
+
+<pre><code>return a ^ b ? c : a
+</code></pre>
+
+<!--more-->
+
+
+<h2>2. Overloading is compile-time static binding and Overriding is run-time dynamic binding</h2>
+
+<p>In junior Java developer interviews, this is a popular question, the question would be:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p><strong>What is the output?</strong></p>
+
+<p>If your answer is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Derived)
+</code></pre>
+
+<p>This is wrong. For your surprise the actual output is</p>
+
+<pre><code>Test.methodA(Base)
+Test.methodA(Base)
+</code></pre>
+
+<p>This is because the overloading is compile-time binding. When the compiler trying to figure out which <code>methodA</code> it is in <code>t.methodA(d)</code>, as far as the compiler knows is the definition of <code>d</code> is <code>Base</code>.</p>
+
+<p>So, must be careful when overriding <code>Object.equals(otherObject)</code> function, override like this: <code>public boolean equals(Object other) {...}</code></p>
+
+<h2>3. Java Object life cycle</h2>
+
+<ol>
+<li>Created</li>
+<li>In use (strongly reachable)</li>
+<li>Invisible</li>
+<li>Unreachable</li>
+<li>Collected</li>
+<li>Finalized</li>
+<li>Deallocated</li>
+</ol>
+
+
+<h2>4. How to declare i and j to make it be an infinite loop</h2>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>This question also comes from <a href="http://stackoverflow.com/questions/8015146/how-to-declare-i-and-j-to-make-it-be-an-infinite-loop">StackOverflow</a>.</p>
+
+<p>If <code>i</code> and <code>j</code> are primitive Java type, <code>i != j</code> means the int(or float, or whatever) value not equal, there will be no answer. However, <code>i != j</code> also means <code>i</code> and <code>j</code> are not the same Object. So, one of the answer is:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<h2>5. Invoke a java method when given the method name as a string</h2>
+
+<p>This question is very easy for scripting languages like Python and Perl. But for strong-type language like Java and C# we need a powerful tool called <strong>reflector</strong>.</p>
+
+<blockquote><p>Coding from the hip, it would be something like:</p></blockquote>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>The parameters identify the very specific method you need (if there are several overloaded available, if the method has no arguments, only give methodName).
+Then you invoke that method by calling</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Again, leave out the arguments in .invoke, if you don&#8217;t have any. But yeah. Read about <a href="http://java.sun.com/docs/books/tutorial/reflect/index.html">Java Reflection</a>.</p>
+
+<p>BTW, solution above is from <a href="http://stackoverflow.com/questions/160970/how-do-i-invoke-a-java-method-when-given-the-method-name-as-a-string">StackOverflow</a>.</p>
+
+<h2>6. what is difference between string literal and new String(&#8220;&#8230;&#8221;)</h2>
+
+<p>The question is:</p>
+
+<blockquote><p>What is difference between
+Liquid error: undefined method <code>Py_IsInitialized' for RubyPython::Python:Module
+and
+Liquid error: undefined method</code>Py_IsInitialized&#8217; for RubyPython::Python:Module</p></blockquote>
+
+<p>The answer from <a href="http://stackoverflow.com/questions/3297867/difference-between-string-object-and-string-literal">StackOverflow</a> is:</p>
+
+<p>When you use a string literal the string can be <a href="http://en.wikipedia.org/wiki/String_interning">interned</a> but when you use new String(&#8220;&#8230;&#8221;) you get a new string object.</p>
+
+<p>In this example both string literals refer the same object:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Here two different objects are created and they have different references:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>In general you should use the string literal notation when possible. It is easier to read and it gives the compiler a chance to optimize your code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple sliders on one page - jquery]]></title>
+    <link href="http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
+    <updated>2012-08-29T21:52:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
+    <content type="html"><![CDATA[<p>I was trying to put several sliders on the same page. There are actually lots of tutorials can tell you how to do that, like <a href="http://demo.tutorialzine.com/2011/12/what-you-need-to-know-html5-range-input/slider-jqueryui.html">this one</a>.</p>
+
+<p>However, I want multiple, like this:</p>
+
+<p><img src="http://GoSteven.com/downloads/20120829_slider.png" title="[Slider [Multiple slider on one page]]" ></p>
+
+<!--more-->
+
+
+<p>In the sample code, the javascript looks like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>They find the html element by id. But when I generate sliders in a loop, it would be nasty to assign ids to each slider:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Fortunately  <code>each()</code> in jquery is very handy, we can get all the divs, and loop through them:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>When using <code>each()</code> sometime you could encounter error like:</p>
+
+<blockquote><p> &#8220;Uncaught TypeError: Object #<HTMLDivElement> has no method &#8216;find&#8217;&#8221;</p></blockquote>
+
+<p>This is because the <code>obj</code> in <code>$('.contSlider').each(function(i,obj) {</code> refers to a DOM object rather than a jquery object.</p>
+
+<p>Add <code>$()</code> to make it a jquery object like this: <code>$(obj).find('.currentValue')</code>.</p>
+
+<p>In the end, what I got is:</p>
+
+<p><link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" /></p>
+
+<div class="contSlider">
+     <h4>slider 1</h4>
+     <div class="slider"></div>
+     <p class="note">Current value: <span class="currentValue">0</span></p>
+</div>
+
+
+<div class="contSlider">
+     <h4>slider 2</h4>
+     <div class="slider"></div>
+     <p class="note">Current value: <span class="currentValue">0</span></p>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+
+<script >
+    $(function(){
+        $('.contSlider').each(function(i,obj) {
+            var currentValue = $(obj).find('.currentValue')
+            var slider = $(obj).find('.slider')
+            slider.slider({
+                max: 500,
+                min: 0,
+                slide: function(event, ui) {
+                    currentValue.html(ui.value);
+                }
+            });
+        });
+    });
+</script>
+
+
+<p>&#8211;EOF&#8211;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Ranger visual file manager]]></title>
+    <link href="http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
+    <updated>2012-08-26T17:10:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+    <content type="html"><![CDATA[<p>If you spend more than 2 hours with terminal everyday, like me. There is a tool you wish you could know earlier &#8211; ranger.</p>
+
+<p><img src="http://GoSteven.com/downloads/20120826_ranger.png" title="[Ranger [Ranger File Manager zsh]]" ></p>
+
+<!--more-->
+
+
+<p>Very powerfull and very handy. Get the source from <a href="http://www.nongnu.org/ranger/">here</a> and mannual in <a href="http://www.nongnu.org/ranger/ranger.1.html">here</a>.</p>
+
+<p>Navigate use hjkl like vim and do what every finder can do with preview. (It can even preview photos)</p>
+
+<p>If you are using zsh like me, to enable ranger in zsh, follow the steps below:</p>
+
+<h4>1. In terminal:</h4>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<h4>2. Past the following code:</h4>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<h4>3. Press Ctrl + D to end cat.</h4>
+
+<p>Then you are good to go!</p>
+
+<p>&#8211;EOF&#8211;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vertically scale web application via using non-blocking I/O]]></title>
+    <link href="http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/"/>
+    <updated>2012-07-28T21:51:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o</id>
+    <content type="html"><![CDATA[<p>I have been working on web application scaling for a while. There are lots of interesting stuff. I will scale vertically first.</p>
+
+<h2>Non-blocking I/O</h2>
+
+<p>Blocking I/O means that the program execution is put on hold while the I/O is going on, which means the program waits until the I/O is finished and then continues it&#8217;s execution.</p>
+
+<p>However, in non-blocking I/O, the program can continue during I/O operations, and is notified via a callback when IO operation is finished. This forces programmers to design programs differently making them perform a lot better.</p>
+
+<p>The Non-blocking I/O was supported by most Operation Systems. On Windows there is underlying OS support for non-blocking I/O, and Microsoft&#8217;s CLR(Common Language Runtime, virtual machine component of .NET framework) takes advantage of that.</p>
+
+<h2>Non-blocking I/O for web applications</h2>
+
+<p>The implementation of non-blocking IO contribute the success of projects like <a href="http://nodejs.org/">node.js</a>.</p>
+
+<p>For common web applications like JAVA Servlet, Apache web server , there is a design flaw, which introduce lots of overheads consume lots of mem and cpu because the thread is expensive. Non-blocking I/O is smart as the pending I/O connections will not consume any resources. On the other hand, underlying OS will be exhausted when looping through threads and checking status if each request will be handled via threads.</p>
+
+<p>Here is a good slide describe node.js:</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/2693037" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/marcusf/nonblocking-io-event-loops-and-nodejs" title="Non-blocking I/O, Event loops and node.js" target="_blank">Non-blocking I/O, Event loops and node.js</a> </strong> from <strong><a href="http://www.slideshare.net/marcusf" target="_blank">Marcus Frödin</a></strong> </div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Latency numbers every programmer should know]]></title>
+    <link href="http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know/"/>
+    <updated>2012-06-08T13:44:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know</id>
+    <content type="html"><![CDATA[<p>This is an old topic from <a href="http://research.google.com/people/jeff/">Jeff Dean</a></p>
+
+<div><script src='https://gist.github.com/2843375.js?file='></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/2843375&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Download YouTube videos using python]]></title>
+    <link href="http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python/"/>
+    <updated>2012-06-07T13:17:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python</id>
+    <content type="html"><![CDATA[<p>I have searched around to find a simple way to download youtube video. However, google hasn’t provide an API for downloading, and youtube page content structure seems has changed a lot, some old post regarding how to download youtube video in <a href="http://abhinay.wordpress.com/2010/05/12/downloading-youtube-videos-using-python-one-liner/">one line python script</a> doesn’t work any more.</p>
+
+<p>Finally I find an actively repository on github and forked it: <a href="https://github.com/GoSteven/python-youtube-download">python-youtube-download</a>.  To make it simpler to use rather than selecting the definition and specifying the format, I added main script to enable it to run in one line:</p>
+
+<pre><code>python youtube.py "http://www.youtube.com/watch?v=6bXOOz8mN6U"
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Concurrent tasks execution in Python]]></title>
+    <link href="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/"/>
+    <updated>2012-05-13T13:37:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python</id>
+    <content type="html"><![CDATA[<p>There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.</p>
+
+<h3>First way: Manage the thread yourself</h3>
+
+<p>I have a repo on Github, <a href="https://github.com/GoSteven/tumblrimgdownloader/blob/master/imgdl.py">Tumblr Image Downloader</a>, which is used for batch download images from a tumblr blog using tumblr API.</p>
+
+<p>Basically, there is a <em>task queue</em>:</p>
+
+<p>Liquid error: Could not open library &#8216;lib.so&#8217;: lib.so: cannot open shared object file: No such file or directory</p>
+
+<p>and a <em>worker</em>:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>What the <em>download_img</em> function does is get the image url and save it to the <em>save_path</em>.</p>
+
+<p>The program will call the <em>download_imgs</em> function:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<h3>Better and Simpler way: Using concurrent.futures module</h3>
+
+<p><a href="http://www.python.org/dev/peps/pep-3148/">PEP 3148</a> gives the motivation for this module:</p>
+
+<blockquote><p>Python currently has powerful primitives to construct multi-threaded and multi-process applications but parallelizing simple operations requires a lot of work i.e. explicitly launching processes/threads, constructing a work/results queue, and waiting for completion or some other termination condition (e.g. failure, timeout). It is also difficult to design an application with a global process/thread limit when each component invents its own parallel execution strategy.</p></blockquote>
+
+<p>This module will make the life easier. Download link is <a href="http://pypi.python.org/pypi/futures">here</a>. There are two types of executor: ThreadPoolExecutor and ProcessPoolExecutor.</p>
+
+<p>I will take ThreadPoolExecutor for example:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>-EOF-</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to ZSH]]></title>
+    <link href="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/"/>
+    <updated>2012-05-10T21:31:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/05/10/switching-to-zsh</id>
+    <content type="html"><![CDATA[<p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
+
+<pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+</code></pre>
+
+<h4>The good thing</h4>
+
+<p>It works pretty awesome. It &#8220;acts extremely similar to bash&#8221;, but not always, which I will explain in the painful part. It does the typo correction which is very helpful to careless typers like me.</p>
+
+<h4>The pain during the switching</h4>
+
+<p>After typing around with zsh, I was going to spreading it. I am using Octopress for blogging, I am astonished when I find out zsh shows the git folder status in the prompt.</p>
+
+<p>However, when I using rake to create a new post, it shows <code>zsh: no matches found: new_post[Switching to ZSH]</code>. I thought it was the ruby gem version problem as I installed something for OPENSHIFT of RedHat. But, it&#8217;s not.</p>
+
+<p>The reason is zsh doesn&#8217;t know about the RVM function, RVM need to be loaded into the shell session as a function.</p>
+
+<p>Append</p>
+
+<pre><code>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+</code></pre>
+
+<p>to the .zshrc will fix the problem.</p>
+
+<h4>Investigate more</h4>
+
+<p>Go through the <a href="http://zsh.sourceforge.net/Guide/">zsh user guide</a>, enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Play around with Django]]></title>
+    <link href="http://GoSteven.com/blog/2012/03/18/play-around-with-django/"/>
+    <updated>2012-03-18T22:24:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/03/18/play-around-with-django</id>
+    <content type="html"><![CDATA[<p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
+
+<p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
+
+<p>Django-nonreal contain all the major functionalities of Django which can host pure Django application on google application. It just works awesome!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
+    <link href="http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <updated>2011-12-29T00:11:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
+
+<p>I am not going to migrate my old blog post here, as those are mostly code snippets. Visit <a href="http://dev.gosteven.com">Steven&#8217;s Dev Blog</a> in case you are interested.</p>
+]]></content>
+  </entry>
+  
+</feed>

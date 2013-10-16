@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tools | Steven You]]></title>
+  <link href="http://GoSteven.com/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://GoSteven.com/"/>
+  <updated>2013-10-16T00:18:15+00:00</updated>
+  <id>http://GoSteven.com/</id>
+  <author>
+    <name><![CDATA[Steven You]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Ranger visual file manager]]></title>
+    <link href="http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
+    <updated>2012-08-26T17:10:00+00:00</updated>
+    <id>http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+    <content type="html"><![CDATA[<p>If you spend more than 2 hours with terminal everyday, like me. There is a tool you wish you could know earlier -- ranger.</p>
+
+<p><img src="/downloads/20120826_ranger.png" title="[Ranger [Ranger File Manager zsh]]" ></p>
+
+<!--more-->
+
+
+<p>Very powerfull and very handy. Get the source from <a href="http://www.nongnu.org/ranger/">here</a> and mannual in <a href="http://www.nongnu.org/ranger/ranger.1.html">here</a>.</p>
+
+<p>Navigate use hjkl like vim and do what every finder can do with preview. (It can even preview photos)</p>
+
+<p>If you are using zsh like me, to enable ranger in zsh, follow the steps below:</p>
+
+<h4>1. In terminal:</h4>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<h4>2. Past the following code:</h4>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<h4>3. Press Ctrl + D to end cat.</h4>
+
+<p>Then you are good to go!</p>
+
+<p>--EOF--</p>
+]]></content>
+  </entry>
+  
+</feed>
