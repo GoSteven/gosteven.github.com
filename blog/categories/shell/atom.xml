@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: shell | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/shell/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to ZSH]]></title>
-    <link href="http://GoSteven.com/blog/2012/05/10/switching-to-zsh/"/>
+    <link href="http://GoSteven.github.com/blog/2012/05/10/switching-to-zsh/"/>
     <updated>2012-05-10T21:31:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/05/10/switching-to-zsh</id>
+    <id>http://GoSteven.github.com/blog/2012/05/10/switching-to-zsh</id>
     <content type="html"><![CDATA[<p>Following <a href="http://en.wikipedia.org/wiki/Benjamin_Mako_Hill">Mako</a>, after reading some posts regarding the benefit of using ZSH, finally I execute the command jumping to the zsh world:</p>
 
 <pre><code>curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh

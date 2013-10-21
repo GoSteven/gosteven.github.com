@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: technique | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/technique/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/technique/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vertically scale web application via using non-blocking I/O]]></title>
-    <link href="http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/"/>
+    <link href="http://GoSteven.github.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/"/>
     <updated>2012-07-28T21:51:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o</id>
+    <id>http://GoSteven.github.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o</id>
     <content type="html"><![CDATA[<p>I have been working on web application scaling for a while. There are lots of interesting stuff. I will scale vertically first.</p>
 
 <h2>Non-blocking I/O</h2>

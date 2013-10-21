@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jogging | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/jogging/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/jogging/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Interview questions - programming]]></title>
-    <link href="http://GoSteven.com/blog/2012/09/02/interview-questions-programming/"/>
+    <link href="http://GoSteven.github.com/blog/2012/09/02/interview-questions-programming/"/>
     <updated>2012-09-02T19:37:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/09/02/interview-questions-programming</id>
+    <id>http://GoSteven.github.com/blog/2012/09/02/interview-questions-programming</id>
     <content type="html"><![CDATA[<p>Tomorrow will be my first day of my new job. After graduation, I have gone through quite a large number of articles regarding interview questions and programming tricks. I am gonna list some interesting ones.</p>
 
 <h2>1. Check if at least 2 out of 3 booleans is true</h2>
@@ -131,9 +131,9 @@ Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module<
   
   <entry>
     <title type="html"><![CDATA[Play around with Django]]></title>
-    <link href="http://GoSteven.com/blog/2012/03/18/play-around-with-django/"/>
+    <link href="http://GoSteven.github.com/blog/2012/03/18/play-around-with-django/"/>
     <updated>2012-03-18T22:24:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/03/18/play-around-with-django</id>
+    <id>http://GoSteven.github.com/blog/2012/03/18/play-around-with-django</id>
     <content type="html"><![CDATA[<p>Worked on a simple repo recently, which is a diary site using Django-nonreal wich can use google app engine authentication.</p>
 
 <p>GitHub: <a href="https://github.com/GoSteven/Diary">https://github.com/GoSteven/Diary</a></p>
@@ -144,9 +144,9 @@ Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module<
   
   <entry>
     <title type="html"><![CDATA[Setting up octopress blog on GitHub]]></title>
-    <link href="http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
+    <link href="http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github/"/>
     <updated>2011-12-29T00:11:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
+    <id>http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github</id>
     <content type="html"><![CDATA[<p>After install tons of things on my Mac and setting the DNS of the GoSteven.com domain, it finally works for me.</p>
 
 <p>I am not going to migrate my old blog post here, as those are mostly code snippets. Visit <a href="http://dev.gosteven.com">Steven's Dev Blog</a> in case you are interested.</p>

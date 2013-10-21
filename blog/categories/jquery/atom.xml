@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: jquery | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/jquery/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Multiple sliders on one page - jquery]]></title>
-    <link href="http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
+    <link href="http://GoSteven.github.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
     <updated>2012-08-29T21:52:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
+    <id>http://GoSteven.github.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
     <content type="html"><![CDATA[<p>I was trying to put several sliders on the same page. There are actually lots of tutorials can tell you how to do that, like <a href="http://demo.tutorialzine.com/2011/12/what-you-need-to-know-html5-range-input/slider-jqueryui.html">this one</a>.</p>
 
 <p>However, I want multiple, like this:</p>

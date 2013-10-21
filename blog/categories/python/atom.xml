@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: python | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Download YouTube videos using python]]></title>
-    <link href="http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python/"/>
+    <link href="http://GoSteven.github.com/blog/2012/06/07/download-youtube-videos-using-python/"/>
     <updated>2012-06-07T13:17:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/06/07/download-youtube-videos-using-python</id>
+    <id>http://GoSteven.github.com/blog/2012/06/07/download-youtube-videos-using-python</id>
     <content type="html"><![CDATA[<p>I have searched around to find a simple way to download youtube video. However, google hasn’t provide an API for downloading, and youtube page content structure seems has changed a lot, some old post regarding how to download youtube video in <a href="http://abhinay.wordpress.com/2010/05/12/downloading-youtube-videos-using-python-one-liner/">one line python script</a> doesn’t work any more.</p>
 
 <p>Finally I find an actively repository on github and forked it: <a href="https://github.com/GoSteven/python-youtube-download">python-youtube-download</a>.  To make it simpler to use rather than selecting the definition and specifying the format, I added main script to enable it to run in one line:</p>
@@ -29,9 +29,9 @@
   
   <entry>
     <title type="html"><![CDATA[Concurrent tasks execution in Python]]></title>
-    <link href="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/"/>
+    <link href="http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/"/>
     <updated>2012-05-13T13:37:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python</id>
+    <id>http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python</id>
     <content type="html"><![CDATA[<p>There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.</p>
 
 <h3>First way: Manage the thread yourself</h3>

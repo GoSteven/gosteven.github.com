@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | Steven You]]></title>
-  <link href="http://GoSteven.com/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://GoSteven.com/"/>
-  <updated>2013-10-16T00:18:15+00:00</updated>
-  <id>http://GoSteven.com/</id>
+  <link href="http://GoSteven.github.com/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Ranger visual file manager]]></title>
-    <link href="http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
+    <link href="http://GoSteven.github.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
     <updated>2012-08-26T17:10:00+00:00</updated>
-    <id>http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+    <id>http://GoSteven.github.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
     <content type="html"><![CDATA[<p>If you spend more than 2 hours with terminal everyday, like me. There is a tool you wish you could know earlier -- ranger.</p>
 
 <p><img src="/downloads/20120826_ranger.png" title="[Ranger [Ranger File Manager zsh]]" ></p>
