@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: jquery | Steven You]]></title>
+<<<<<<< HEAD
   <link href="http://GoSteven.com/blog/categories/jquery/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
   <updated>2012-09-26T22:10:06+10:00</updated>
   <id>http://GoSteven.com/</id>
+=======
+  <link href="http://GoSteven.github.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +22,15 @@
   
   <entry>
     <title type="html"><![CDATA[Multiple sliders on one page - jquery]]></title>
+<<<<<<< HEAD
     <link href="http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
     <updated>2012-08-29T21:52:00+10:00</updated>
     <id>http://GoSteven.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
+=======
+    <link href="http://GoSteven.github.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/"/>
+    <updated>2012-08-29T21:52:00+00:00</updated>
+    <id>http://GoSteven.github.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery</id>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
     <content type="html"><![CDATA[<p>I was trying to put several sliders on the same page. There are actually lots of tutorials can tell you how to do that, like <a href="http://demo.tutorialzine.com/2011/12/what-you-need-to-know-html5-range-input/slider-jqueryui.html">this one</a>.</p>
 
 <p>However, I want multiple, like this:</p>
@@ -29,6 +42,7 @@
 
 <p>In the sample code, the javascript looks like this:</p>
 
+<<<<<<< HEAD
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -124,6 +138,17 @@
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+=======
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>They find the html element by id. But when I generate sliders in a loop, it would be nasty to assign ids to each slider:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<p>Fortunately  <code>each()</code> in jquery is very handy, we can get all the divs, and loop through them:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 
 <p>When using <code>each()</code> sometime you could encounter error like:</p>
 

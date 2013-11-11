@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+<<<<<<< HEAD
         <loc>http://GoSteven.com/blog/2011/12/29/setting-up-octopress-blog-on-github/</loc>
         <lastmod>2012-06-07T15:21:15+10:00</lastmod>
     </url>
@@ -59,5 +60,69 @@
     <url>
         <loc>http://GoSteven.com/</loc>
         <lastmod>2012-09-02T20:34:47+10:00</lastmod>
+=======
+        <loc>http://GoSteven.github.com/blog/2011/12/29/setting-up-octopress-blog-on-github/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/2012/03/18/play-around-with-django/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/2012/05/10/switching-to-zsh/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/
+        </loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://GoSteven.github.com/blog/2012/06/07/download-youtube-videos-using-python/
+        </loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://GoSteven.github.com/blog/2012/06/08/latency-numbers-every-programmer-should-know/
+        </loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://GoSteven.github.com/blog/2012/07/28/vertically-scale-web-application-via-using-non-blocking-i-slash-o/
+        </loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/2012/08/26/the-ranger-visual-file-manager/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/2012/08/29/multiple-sliders-on-one-page-jquery/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/2012/09/02/interview-questions-programming/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/archives/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/blog/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/</loc>
+        <lastmod>2013-10-21T01:08:00+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://GoSteven.github.com/aboutme/</loc>
+        <lastmod>2013-10-16T00:16:03+00:00</lastmod>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
     </url>
 </urlset>

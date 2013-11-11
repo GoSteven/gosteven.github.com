@@ -18,7 +18,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
+<<<<<<< HEAD
   <link rel="canonical" href="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python">
+=======
+  <link rel="canonical" href="http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python">
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,7 +65,11 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
+<<<<<<< HEAD
     <input type="hidden" name="q" value="site:GoSteven.com" />
+=======
+    <input type="hidden" name="q" value="site:GoSteven.github.com" />
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -96,13 +104,18 @@
   
 
 
+<<<<<<< HEAD
 <time datetime="2012-05-13T13:37:00+10:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+=======
+<time datetime="2012-05-13T13:37:00+00:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
         
       </p>
     
   </header>
 
 
+<<<<<<< HEAD
 <script type="text/javascript"><!--
     google_ad_client = "ca-pub-4894666098713162";
     /* gosteven */
@@ -114,6 +127,8 @@
 <script type="text/javascript"
     src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+=======
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 <div class="entry-content"><p>There are tasks need to be done with multiple thread, e.g.: I need to request thousands of urls, in order to training the collaborative filtering service. This could easily be done using python.</p>
 
 <h3>First way: Manage the thread yourself</h3>
@@ -122,6 +137,7 @@
 
 <p>Basically, there is a <em>task queue</em>:</p>
 
+<<<<<<< HEAD
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'>    <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -166,6 +182,18 @@
 </span><span class='line'>    <span class="n">download_imgs</span><span class="p">(</span><span class="n">imgs_src</span><span class="p">,</span> <span class="n">save_path</span><span class="p">,</span> <span class="n">numthreads</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
+=======
+<p>Liquid error: Could not open library &#8216;lib.so&#8217;: lib.so: cannot open shared object file: No such file or directory</p>
+
+<p>and a <em>worker</em>:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>What the <em>download_img</em> function does is get the image url and save it to the <em>save_path</em>.</p>
+
+<p>The program will call the <em>download_imgs</em> function:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 
 <h3>Better and Simpler way: Using concurrent.futures module</h3>
 
@@ -177,6 +205,7 @@
 
 <p>I will take ThreadPoolExecutor for example:</p>
 
+<<<<<<< HEAD
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -225,6 +254,9 @@
 </span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%r</span><span class="s"> page is </span><span class="si">%d</span><span class="s"> bytes&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">())))</span>
 </span></code></pre></td></tr></table></div></figure>
 
+=======
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 
 <p>-EOF-</p>
 </div>
@@ -249,7 +281,11 @@
   
 
 
+<<<<<<< HEAD
 <time datetime="2012-05-13T13:37:00+10:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+=======
+<time datetime="2012-05-13T13:37:00+00:00" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
       
 
 <span class="categories">
@@ -263,7 +299,11 @@
     
       <div class="sharing">
   
+<<<<<<< HEAD
   <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/" data-via="steven_you" data-counturl="http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/" >Tweet</a>
+=======
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/" data-via="steven_you" data-counturl="http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/" >Tweet</a>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -388,7 +428,11 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
+<<<<<<< HEAD
   Copyright &copy; 2012 - Steven You -
+=======
+  Copyright &copy; 2013 - Steven You -
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -400,8 +444,13 @@
       
         
         // var disqus_developer = 1;
+<<<<<<< HEAD
         var disqus_identifier = 'http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/';
         var disqus_url = 'http://GoSteven.com/blog/2012/05/13/concurrent-tasks-execution-in-python/';
+=======
+        var disqus_identifier = 'http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/';
+        var disqus_url = 'http://GoSteven.github.com/blog/2012/05/13/concurrent-tasks-execution-in-python/';
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
         var disqus_script = 'embed.js';
       
     (function () {

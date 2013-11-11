@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: latency | Steven You]]></title>
+<<<<<<< HEAD
   <link href="http://GoSteven.com/blog/categories/latency/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
   <updated>2012-09-26T22:10:06+10:00</updated>
   <id>http://GoSteven.com/</id>
+=======
+  <link href="http://GoSteven.github.com/blog/categories/latency/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,6 +22,7 @@
   
   <entry>
     <title type="html"><![CDATA[Latency numbers every programmer should know]]></title>
+<<<<<<< HEAD
     <link href="http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know/"/>
     <updated>2012-06-08T13:44:00+10:00</updated>
     <id>http://GoSteven.com/blog/2012/06/08/latency-numbers-every-programmer-should-know</id>
@@ -45,6 +53,14 @@ Visual chart provided by [ayshen](https://gist.github.com/ayshen)
 Data by [Jeff Dean](http://research.google.com/people/jeff/)
 
 Originally by [Peter Norvig](http://norvig.com/21-days.html#answers)</code></pre></noscript></div>
+=======
+    <link href="http://GoSteven.github.com/blog/2012/06/08/latency-numbers-every-programmer-should-know/"/>
+    <updated>2012-06-08T13:44:00+00:00</updated>
+    <id>http://GoSteven.github.com/blog/2012/06/08/latency-numbers-every-programmer-should-know</id>
+    <content type="html"><![CDATA[<p>This is an old topic from <a href="http://research.google.com/people/jeff/">Jeff Dean</a>
+<div><script src='https://gist.github.com/2843375.js?file='></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/2843375&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 </p>
 ]]></content>
   </entry>

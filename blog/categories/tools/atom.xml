@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | Steven You]]></title>
+<<<<<<< HEAD
   <link href="http://GoSteven.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://GoSteven.com/"/>
   <updated>2012-09-26T22:10:06+10:00</updated>
   <id>http://GoSteven.com/</id>
+=======
+  <link href="http://GoSteven.github.com/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://GoSteven.github.com/"/>
+  <updated>2013-10-21T01:08:10+00:00</updated>
+  <id>http://GoSteven.github.com/</id>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
   <author>
     <name><![CDATA[Steven You]]></name>
     
@@ -15,9 +22,15 @@
   
   <entry>
     <title type="html"><![CDATA[The Ranger visual file manager]]></title>
+<<<<<<< HEAD
     <link href="http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
     <updated>2012-08-26T17:10:00+10:00</updated>
     <id>http://GoSteven.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+=======
+    <link href="http://GoSteven.github.com/blog/2012/08/26/the-ranger-visual-file-manager/"/>
+    <updated>2012-08-26T17:10:00+00:00</updated>
+    <id>http://GoSteven.github.com/blog/2012/08/26/the-ranger-visual-file-manager</id>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
     <content type="html"><![CDATA[<p>If you spend more than 2 hours with terminal everyday, like me. There is a tool you wish you could know earlier -- ranger.</p>
 
 <p><img src="/downloads/20120826_ranger.png" title="[Ranger [Ranger File Manager zsh]]" ></p>
@@ -33,6 +46,7 @@
 
 <h4>1. In terminal:</h4>
 
+<<<<<<< HEAD
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -82,6 +96,13 @@
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+=======
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+
+<h4>2. Past the following code:</h4>
+
+<p>Liquid error: undefined method `Py_IsInitialized' for RubyPython::Python:Module</p>
+>>>>>>> be4a6177c7a45b3f52b0602bd11e949c2a02eae1
 
 <h4>3. Press Ctrl + D to end cat.</h4>
 
