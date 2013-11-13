@@ -7,7 +7,7 @@ require "stringex"
 ssh_user       = "ec2-user@54.252.173.180"
 ssh_port       = "22"
 document_root  = "/usr/share/nginx/gosteven.com/"
-rsync_delete   = true
+rsync_delete   = false
 deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
