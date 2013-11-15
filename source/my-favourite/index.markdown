@@ -15,6 +15,7 @@ footer: true
 * zsh
 * git
 * mvn
+* chroot
 * terminator
 * iterm2
 * vagrant
@@ -23,6 +24,7 @@ footer: true
 * sshfs
 * pycharm
 * intellij
+* edu.umd.cs.findbugs
 
 #### fav frameworks
 
