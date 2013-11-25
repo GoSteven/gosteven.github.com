@@ -22,6 +22,7 @@ Press `shift` while selecting using mouse.
 OS X (mac): hold alt/option while selecting.
 
 
+
 ### Simplist vimrc
 
     set mouse=a
@@ -65,3 +66,6 @@ OS X (mac): hold alt/option while selecting.
     set shiftwidth=4
     set autoindent
     set smartindent
+
+### A list of powerful vim plugins
+[https://github.com/wklken/k-vim](https://github.com/wklken/k-vim)
