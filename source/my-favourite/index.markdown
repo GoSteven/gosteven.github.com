@@ -42,4 +42,9 @@ footer: true
 * java
 * bash
 
-I am not a C person.
+#### to explore
+* [Meteor](http://www.meteor.com/)
+* [PhantomJS](http://phantomjs.org/)
+* [CasperJS](http://casperjs.org/)
+
+I am not a C person, yet.
