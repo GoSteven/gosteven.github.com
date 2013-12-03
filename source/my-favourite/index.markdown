@@ -22,6 +22,8 @@ footer: true
 * octopress
 * homebrew
 * sshfs
+* markdoc
+* gollum
 * pycharm
 * intellij
 * edu.umd.cs.findbugs

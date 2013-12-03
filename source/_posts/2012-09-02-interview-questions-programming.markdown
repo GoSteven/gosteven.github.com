@@ -175,3 +175,11 @@ System.out.println(c == d);  // False
 
 In general you should use the string literal notation when possible. It is easier to read and it gives the compiler a chance to optimize your code.
 
+-------------
+
+7. Memory usage of java collections
+------
+
+This article [From Java code to Java heap](http://www.ibm.com/developerworks/java/library/j-codetoheap/index.html) gives a comprehensive explanation of memory usage of popular java collection data structures.
+
+
