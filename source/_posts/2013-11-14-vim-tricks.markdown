@@ -21,6 +21,10 @@ Press `shift` while selecting using mouse.
 
 OS X (mac): hold alt/option while selecting.
 
+### Grep in all vim buffers and show in quickfix
+
+    :call setqflist([]) | bufdo grepadd! something %
+
 
 
 ### Simplist vimrc
