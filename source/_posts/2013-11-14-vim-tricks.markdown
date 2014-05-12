@@ -25,6 +25,13 @@ OS X (mac): hold alt/option while selecting.
 
     :call setqflist([]) | bufdo grepadd! something %
 
+### Resize splitted windows
+
+Use `:resize 60`, `:res + 10` `:vertical resize +5` to adjust quickly.
+
+Or `Ctrl-w +`, `Ctrl-w -`, `Ctrl-w >`, `Ctrl-w <` and `10 Ctrl-w >` to adjust time by time.
+
+The most commonly used is `Ctrl-w =` to resize all windows to equal size.
 
 
 ### Simplist vimrc

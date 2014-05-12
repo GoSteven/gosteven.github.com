@@ -27,6 +27,9 @@ footer: true
 * pycharm
 * intellij
 * edu.umd.cs.findbugs
+* phonegap
+* requirejs
+* jQurey mobile
 
 #### fav frameworks
 
